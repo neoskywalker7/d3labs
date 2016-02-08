@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>This is an Visualization</title>
+        <style>
+            button { 
+
+                color: white;
+                border-style: none;
+            }
+            li {
+                list-style: none;
+                
+            }
+            ul {
+                padding-left: 0cm;
+            }
+            h1 {
+                color: white;
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Gapminder - Wealth and Health of Notations</h1>
+        <h3 id="Title">Countries</h3>
+
+        <div>
+            <label>Name</label>
+            <input type="text" id="textInput">
+            <button onclick="changeTitle();">add</button>
+        </div>
+        <hr>
+        <ul id="log">
+        </ul>
+    </body>
+    <script>
+        var newTitle = "This is the net title";
+        
+
+        
+        function logTitle(newTitle) {
+            var log = document.getElementById("log");
+            var newEntry = document.createElement("li");
+            newEntry.innerHTML = newTitle;
+            log.appendChild(newEntry);
+        }
+        
+        function changeTitle(newTitle) {
+            if(!newTitle) {
+                newTitle = document.getElementById("textInput").value;
+            }
+            logTitle(newTitle);
+        }
+    </script>
+</html>
